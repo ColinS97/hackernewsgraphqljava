@@ -1,13 +1,21 @@
 package com.howtographql.hackernews;
 
 public class Link {
+    private final String id;
     private final String url;
     private final String description;
 
     public Link(String url, String description) {
+        this(null, url, description);
+    }
+
+    public Link(String id, String url, String description){
+        this.id = id;
         this.url = url;
         this.description = description;
     }
+
+    public String getId() {return id;}
 
     public String getUrl() {
         return url;
@@ -17,3 +25,5 @@ public class Link {
         return description;
     }
 }
+
+// docker run --name mongodb -d -v C:/Users/csimo/OneDrive/Documents/hackernewsgraphqljava/mongo:/data/db mongo
